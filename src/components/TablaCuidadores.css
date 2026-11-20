@@ -1,0 +1,165 @@
+/* ── Grid de tarjetas ─────────────────────────────────────── */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+/* ── Tarjeta ──────────────────────────────────────────────── */
+.card-cuidador {
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-cuidador:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.13);
+}
+
+/* ── Foto ─────────────────────────────────────────────────── */
+.card-foto-wrapper {
+  position: relative;
+  background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem 1.5rem 0.75rem;
+}
+
+.card-foto {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-mascota-icon {
+  position: absolute;
+  bottom: 0.6rem;
+  right: 1.2rem;
+  font-size: 1.6rem;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+}
+
+/* ── Cuerpo ───────────────────────────────────────────────── */
+.card-body {
+  padding: 1.1rem 1.3rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.card-nombre {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  text-align: center;
+  margin: 0;
+}
+
+/* ── Tags ciudad / edad ───────────────────────────────────── */
+.card-tags {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+}
+
+.tag-ciudad {
+  background-color: #fff3e0;
+  color: #e65100;
+}
+
+.tag-edad {
+  background-color: #fce4ec;
+  color: #880e4f;
+}
+
+/* ── Filas de info ────────────────────────────────────────── */
+.card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  background-color: #fafafa;
+  border-radius: 12px;
+  padding: 0.75rem 0.9rem;
+}
+
+.card-info-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #374151;
+  line-height: 1.4;
+}
+
+.info-icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+  margin-top: 0.05rem;
+}
+
+/* ── Botón contactar ──────────────────────────────────────── */
+.btn-contactar {
+  display: block;
+  text-align: center;
+  margin-top: auto;
+  background: linear-gradient(135deg, #ff8c42 0%, #ff6b35 100%);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.65rem 1rem;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: opacity 0.2s ease, transform 0.1s ease;
+  letter-spacing: 0.02em;
+}
+
+.btn-contactar:hover {
+  opacity: 0.9;
+  transform: scale(0.98);
+}
+
+/* ── Sin resultados ───────────────────────────────────────── */
+.sin-resultados {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.sin-resultados-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.sin-resultados p {
+  color: #374151;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.sin-resultados-hint {
+  color: #9ca3af !important;
+  font-size: 0.875rem !important;
+  font-weight: 400 !important;
+  margin-top: 0.3rem;
+}
