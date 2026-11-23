@@ -1,8 +1,8 @@
 const API_URL = 'https://xvcrgx53f0.execute-api.us-east-2.amazonaws.com/cuidadores';
 
 /**
- * Obtiene la lista de cuidadores desde el mock de Beeceptor.
- * Los campos vienen en formato DynamoDB: { S: "valor" } o { N: "número" }
+ * Obtiene la lista de cuidadores desde API Gateway → Lambda → DynamoDB.
+ * Los datos llegan ya normalizados como objetos planos.
  */
 export async function fetchCuidadores() {
   const response = await fetch(API_URL, {
@@ -15,22 +15,20 @@ export async function fetchCuidadores() {
 
   const data = await response.json();
 
-  // Normalizar el formato DynamoDB a objetos planos
   const cuidadores = (data.Items || []).map((item) => ({
-    nombre: item.nombre?.S ?? '',
-    edad: item.edad?.N ?? '',
-    disponibilidad: item.disponibilidad?.S ?? '',
-    celular: item.celular?.N ?? '',
-    ciudad: item.ciudad?.S ?? '',
+    id:             item.id ?? '',
+    nombre:         item.nombre ?? '',
+    edad:           item.edad ?? '',
+    disponibilidad: item.disponibilidad ?? '',
+    celular:        item.celular ?? '',
+    ciudad:         item.ciudad ?? '',
   }));
 
   return { cuidadores, count: data.Count ?? cuidadores.length };
 }
 
 /**
- * Registra un nuevo cuidador.
- * En producción: cambiar API_URL por el endpoint real de API Gateway.
- * El mock de Beeceptor acepta el POST y responde con éxito.
+ * Registra un nuevo cuidador en DynamoDB vía API Gateway → Lambda.
  */
 export async function registrarCuidador(cuidador) {
   const response = await fetch(API_URL, {
@@ -40,15 +38,14 @@ export async function registrarCuidador(cuidador) {
       Accept: 'application/json',
     },
     body: JSON.stringify({
-      nombre: cuidador.nombre.trim(),
-      edad: Number(cuidador.edad),
+      nombre:         cuidador.nombre.trim(),
+      edad:           Number(cuidador.edad),
       disponibilidad: cuidador.disponibilidad.trim(),
-      celular: cuidador.celular.trim(),
-      ciudad: cuidador.ciudad.trim(),
+      celular:        cuidador.celular.trim(),
+      ciudad:         cuidador.ciudad.trim(),
     }),
   });
 
-  // Beeceptor mock devuelve 200 aunque el body sea vacío — lo tratamos como éxito
   if (!response.ok) {
     throw new Error(`Error al registrar: ${response.status} ${response.statusText}`);
   }
