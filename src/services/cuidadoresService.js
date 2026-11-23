@@ -1,4 +1,4 @@
-const API_URL = 'https://cuidadores.free.beeceptor.com/dynamoCuidadores';
+const API_URL = 'https://xvcrgx53f0.execute-api.us-east-2.amazonaws.com/cuidadores';
 
 /**
  * Obtiene la lista de cuidadores desde el mock de Beeceptor.
