@@ -1,7 +1,7 @@
 /* ── Grid de tarjetas ─────────────────────────────────────── */
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1.5rem;
 }
 
@@ -10,15 +10,16 @@
   background: #ffffff;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 12px rgba(216, 67, 21, 0.08);
+  border: 1px solid #fff0e6;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
   display: flex;
   flex-direction: column;
 }
 
 .card-cuidador:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.13);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(216, 67, 21, 0.16);
 }
 
 /* ── Foto ─────────────────────────────────────────────────── */
@@ -29,6 +30,21 @@
   justify-content: center;
   align-items: center;
   padding: 1.5rem 1.5rem 0.75rem;
+  overflow: hidden;
+}
+
+/* Husky silueta sutil en el fondo de la foto */
+.card-foto-wrapper::before {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: -8px;
+  width: 90px;
+  height: 90px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cg fill='%23ff8c42' opacity='0.12'%3E%3Cellipse cx='100' cy='140' rx='55' ry='40'/%3E%3Ccircle cx='100' cy='82' r='32'/%3E%3Cpolygon points='72,60 60,25 88,55'/%3E%3Cpolygon points='128,60 140,25 112,55'/%3E%3Cellipse cx='100' cy='95' rx='14' ry='10'/%3E%3Cpath d='M155,130 Q185,100 175,75 Q170,65 160,80 Q165,95 150,115 Z'/%3E%3Crect x='72' y='168' width='14' height='28' rx='7'/%3E%3Crect x='114' y='168' width='14' height='28' rx='7'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+  pointer-events: none;
 }
 
 .card-foto {
@@ -37,7 +53,9 @@
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid #ffffff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 1;
 }
 
 .card-mascota-icon {
@@ -45,7 +63,8 @@
   bottom: 0.6rem;
   right: 1.2rem;
   font-size: 1.6rem;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.12));
+  z-index: 1;
 }
 
 /* ── Cuerpo ───────────────────────────────────────────────── */
@@ -76,18 +95,20 @@
 .tag {
   font-size: 0.78rem;
   font-weight: 600;
-  padding: 0.25rem 0.65rem;
+  padding: 0.28rem 0.7rem;
   border-radius: 999px;
 }
 
 .tag-ciudad {
   background-color: #fff3e0;
-  color: #e65100;
+  color: #c2410c;
+  border: 1px solid #fed7aa;
 }
 
 .tag-edad {
-  background-color: #fce4ec;
-  color: #880e4f;
+  background-color: #fdf2f8;
+  color: #9d174d;
+  border: 1px solid #fbcfe8;
 }
 
 /* ── Filas de info ────────────────────────────────────────── */
@@ -95,9 +116,10 @@
   display: flex;
   flex-direction: column;
   gap: 0.45rem;
-  background-color: #fafafa;
+  background-color: #fff8f2;
   border-radius: 12px;
   padding: 0.75rem 0.9rem;
+  border: 1px solid #fff0e6;
 }
 
 .card-info-row {
@@ -115,34 +137,39 @@
   margin-top: 0.05rem;
 }
 
-/* ── Botón contactar ──────────────────────────────────────── */
+/* ── Botón contactar (WhatsApp style) ─────────────────────── */
 .btn-contactar {
-  display: block;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
   margin-top: auto;
-  background: linear-gradient(135deg, #ff8c42 0%, #ff6b35 100%);
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
   color: #ffffff;
   font-weight: 700;
   font-size: 0.9rem;
-  padding: 0.65rem 1rem;
+  padding: 0.7rem 1rem;
   border-radius: 12px;
   text-decoration: none;
-  transition: opacity 0.2s ease, transform 0.1s ease;
+  transition: opacity 0.2s, transform 0.1s, box-shadow 0.2s;
+  box-shadow: 0 3px 10px rgba(37, 211, 102, 0.3);
   letter-spacing: 0.02em;
 }
 
 .btn-contactar:hover {
-  opacity: 0.9;
+  opacity: 0.92;
   transform: scale(0.98);
+  box-shadow: 0 5px 14px rgba(37, 211, 102, 0.4);
 }
 
 /* ── Sin resultados ───────────────────────────────────────── */
 .sin-resultados {
   text-align: center;
-  padding: 3rem 1rem;
+  padding: 3.5rem 1rem;
   background: #ffffff;
   border-radius: 20px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 1.5px dashed #fed7aa;
 }
 
 .sin-resultados-icon {
