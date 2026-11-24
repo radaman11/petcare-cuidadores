@@ -117,12 +117,18 @@ body::after {
 /* ── Grid de filtros ──────────────────────────────────────── */
 .filtro-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 1rem;
   align-items: end;
 }
 
-@media (max-width: 680px) {
+@media (max-width: 860px) {
+  .filtro-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 500px) {
   .filtro-grid {
     grid-template-columns: 1fr;
   }

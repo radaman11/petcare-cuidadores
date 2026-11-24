@@ -224,6 +224,18 @@
   cursor: not-allowed;
 }
 
+/* ── Sección del formulario ───────────────────────────────── */
+.form-seccion {
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #ff8c42;
+  margin-top: 0.25rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1.5px solid #fff3e0;
+}
+
 /* ── Spinner dentro del botón ─────────────────────────────── */
 .spinner-dark {
   border-color: rgba(255,255,255,0.35);
