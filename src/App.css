@@ -17,34 +17,27 @@ body {
   min-height: 100vh;
 }
 
-/* ── Husky decorativo (SVG inline como pseudo-elemento) ───── */
-body::before {
-  content: '';
+/* ── Huskys decorativos ───────────────────────────────────── */
+.husky-deco {
   position: fixed;
-  bottom: 0;
-  left: -10px;
-  width: 280px;
-  height: 280px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cg fill='%23ff8c42' opacity='0.07'%3E%3C!-- Cuerpo --%3E%3Cellipse cx='100' cy='140' rx='55' ry='40'/%3E%3C!-- Cabeza --%3E%3Ccircle cx='100' cy='82' r='32'/%3E%3C!-- Oreja izquierda --%3E%3Cpolygon points='72,60 60,25 88,55'/%3E%3C!-- Oreja derecha --%3E%3Cpolygon points='128,60 140,25 112,55'/%3E%3C!-- Hocico --%3E%3Cellipse cx='100' cy='95' rx='14' ry='10'/%3E%3C!-- Cola --%3E%3Cpath d='M155,130 Q185,100 175,75 Q170,65 160,80 Q165,95 150,115 Z'/%3E%3C!-- Pata delantera izq --%3E%3Crect x='72' y='168' width='14' height='28' rx='7'/%3E%3C!-- Pata delantera der --%3E%3Crect x='114' y='168' width='14' height='28' rx='7'/%3E%3C!-- Markings cara --%3E%3Cellipse cx='100' cy='88' rx='8' ry='6' fill='%23ffffff' opacity='0.4'/%3E%3C/g%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-size: contain;
   pointer-events: none;
   z-index: 0;
+  opacity: 0.13;
 }
 
-body::after {
-  content: '';
-  position: fixed;
-  top: 60px;
-  right: -20px;
-  width: 220px;
-  height: 220px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cg fill='%23ff6b35' opacity='0.05'%3E%3Cellipse cx='100' cy='140' rx='55' ry='40'/%3E%3Ccircle cx='100' cy='82' r='32'/%3E%3Cpolygon points='72,60 60,25 88,55'/%3E%3Cpolygon points='128,60 140,25 112,55'/%3E%3Cellipse cx='100' cy='95' rx='14' ry='10'/%3E%3Cpath d='M155,130 Q185,100 175,75 Q170,65 160,80 Q165,95 150,115 Z'/%3E%3Crect x='72' y='168' width='14' height='28' rx='7'/%3E%3Crect x='114' y='168' width='14' height='28' rx='7'/%3E%3C/g%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-size: contain;
-  pointer-events: none;
-  z-index: 0;
+.husky-deco-left {
+  bottom: -20px;
+  left: -20px;
+  width: 320px;
+  height: 320px;
   transform: scaleX(-1);
+}
+
+.husky-deco-right {
+  top: 80px;
+  right: -20px;
+  width: 260px;
+  height: 260px;
 }
 
 /* ── Contenedor principal ─────────────────────────────────── */
@@ -347,20 +340,6 @@ body::after {
   border: 1.5px dashed #fed7aa;
   position: relative;
   overflow: hidden;
-}
-
-/* Husky decorativo dentro del estado inicial */
-.estado-inicial::before {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  right: -10px;
-  width: 160px;
-  height: 160px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cg fill='%23ff8c42' opacity='0.06'%3E%3Cellipse cx='100' cy='140' rx='55' ry='40'/%3E%3Ccircle cx='100' cy='82' r='32'/%3E%3Cpolygon points='72,60 60,25 88,55'/%3E%3Cpolygon points='128,60 140,25 112,55'/%3E%3Cellipse cx='100' cy='95' rx='14' ry='10'/%3E%3Cpath d='M155,130 Q185,100 175,75 Q170,65 160,80 Q165,95 150,115 Z'/%3E%3Crect x='72' y='168' width='14' height='28' rx='7'/%3E%3Crect x='114' y='168' width='14' height='28' rx='7'/%3E%3C/g%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-size: contain;
-  pointer-events: none;
 }
 
 .estado-inicial-icon {

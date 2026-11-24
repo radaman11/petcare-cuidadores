@@ -86,6 +86,66 @@ export default function App() {
 
   return (
     <div className="app-container">
+
+      {/* Huskys decorativos */}
+      <svg className="husky-deco husky-deco-left" viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <g fill="#ff8c42">
+          {/* cuerpo */}
+          <ellipse cx="100" cy="155" rx="58" ry="42"/>
+          {/* cabeza */}
+          <circle cx="100" cy="85" r="34"/>
+          {/* oreja izq punta */}
+          <polygon points="70,66 54,22 90,58"/>
+          {/* oreja der punta */}
+          <polygon points="130,66 146,22 110,58"/>
+          {/* interior oreja izq */}
+          <polygon points="72,64 60,30 86,58" fill="#ffb347"/>
+          {/* interior oreja der */}
+          <polygon points="128,64 140,30 114,58" fill="#ffb347"/>
+          {/* hocico */}
+          <ellipse cx="100" cy="99" rx="16" ry="11"/>
+          {/* nariz */}
+          <ellipse cx="100" cy="92" rx="7" ry="5" fill="#c0392b"/>
+          {/* marca facial clara */}
+          <ellipse cx="100" cy="102" rx="10" ry="7" fill="#ffe0b2" opacity="0.6"/>
+          {/* ojos */}
+          <circle cx="88" cy="80" r="4" fill="#5d4037"/>
+          <circle cx="112" cy="80" r="4" fill="#5d4037"/>
+          <circle cx="89" cy="79" r="1.5" fill="#fff"/>
+          <circle cx="113" cy="79" r="1.5" fill="#fff"/>
+          {/* cola enroscada */}
+          <path d="M158,140 Q195,110 185,78 Q180,62 166,78 Q172,98 155,120 Z"/>
+          {/* patas delanteras */}
+          <rect x="72" y="182" width="16" height="30" rx="8"/>
+          <rect x="112" y="182" width="16" height="30" rx="8"/>
+          {/* patas traseras */}
+          <rect x="58" y="175" width="14" height="26" rx="7" opacity="0.7"/>
+          <rect x="128" y="175" width="14" height="26" rx="7" opacity="0.7"/>
+        </g>
+      </svg>
+
+      <svg className="husky-deco husky-deco-right" viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <g fill="#ff6b35">
+          <ellipse cx="100" cy="155" rx="58" ry="42"/>
+          <circle cx="100" cy="85" r="34"/>
+          <polygon points="70,66 54,22 90,58"/>
+          <polygon points="130,66 146,22 110,58"/>
+          <polygon points="72,64 60,30 86,58" fill="#ffb347"/>
+          <polygon points="128,64 140,30 114,58" fill="#ffb347"/>
+          <ellipse cx="100" cy="99" rx="16" ry="11"/>
+          <ellipse cx="100" cy="92" rx="7" ry="5" fill="#c0392b"/>
+          <ellipse cx="100" cy="102" rx="10" ry="7" fill="#ffe0b2" opacity="0.6"/>
+          <circle cx="88" cy="80" r="4" fill="#5d4037"/>
+          <circle cx="112" cy="80" r="4" fill="#5d4037"/>
+          <circle cx="89" cy="79" r="1.5" fill="#fff"/>
+          <circle cx="113" cy="79" r="1.5" fill="#fff"/>
+          <path d="M158,140 Q195,110 185,78 Q180,62 166,78 Q172,98 155,120 Z"/>
+          <rect x="72" y="182" width="16" height="30" rx="8"/>
+          <rect x="112" y="182" width="16" height="30" rx="8"/>
+          <rect x="58" y="175" width="14" height="26" rx="7" opacity="0.7"/>
+          <rect x="128" y="175" width="14" height="26" rx="7" opacity="0.7"/>
+        </g>
+      </svg>
       <header className="app-header">
         <span className="app-header-logo" aria-hidden="true">🐾</span>
         <h1>Una Huella en Común</h1>
