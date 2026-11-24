@@ -22,22 +22,22 @@ body {
   position: fixed;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.13;
+  opacity: 0.18;
 }
 
 .husky-deco-left {
-  bottom: -20px;
-  left: -20px;
-  width: 320px;
-  height: 320px;
-  transform: scaleX(-1);
+  bottom: -30px;
+  left: -30px;
+  width: 380px;
+  height: 380px;
 }
 
 .husky-deco-right {
-  top: 80px;
-  right: -20px;
-  width: 260px;
-  height: 260px;
+  top: 60px;
+  right: -30px;
+  width: 300px;
+  height: 300px;
+  transform: scaleX(-1);
 }
 
 /* ── Contenedor principal ─────────────────────────────────── */

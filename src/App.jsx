@@ -87,63 +87,47 @@ export default function App() {
   return (
     <div className="app-container">
 
-      {/* Huskys decorativos */}
-      <svg className="husky-deco husky-deco-left" viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      {/* Huskys decorativos — silueta lateral */}
+      <svg className="husky-deco husky-deco-left" viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <g fill="#ff8c42">
-          {/* cuerpo */}
-          <ellipse cx="100" cy="155" rx="58" ry="42"/>
+          {/* cuerpo principal */}
+          <path d="M40,200 C30,195 20,180 22,160 C24,140 35,125 55,118 C70,113 90,112 110,115 C135,118 158,125 170,140 C182,155 180,175 170,188 C160,200 140,208 115,210 C90,212 55,208 40,200 Z"/>
+          {/* cuello */}
+          <path d="M110,115 C105,100 100,85 105,72 C108,63 118,58 128,60 C138,62 142,70 140,82 C138,95 132,108 122,115 Z"/>
           {/* cabeza */}
-          <circle cx="100" cy="85" r="34"/>
-          {/* oreja izq punta */}
-          <polygon points="70,66 54,22 90,58"/>
-          {/* oreja der punta */}
-          <polygon points="130,66 146,22 110,58"/>
-          {/* interior oreja izq */}
-          <polygon points="72,64 60,30 86,58" fill="#ffb347"/>
-          {/* interior oreja der */}
-          <polygon points="128,64 140,30 114,58" fill="#ffb347"/>
+          <path d="M105,72 C100,55 102,42 112,34 C120,27 134,26 144,32 C154,38 158,50 155,62 C152,74 143,82 132,84 C121,86 110,80 105,72 Z"/>
+          {/* oreja izquierda */}
+          <path d="M112,34 C108,26 106,14 112,8 C116,4 122,6 126,12 C130,18 128,28 124,34 Z"/>
+          {/* oreja derecha */}
+          <path d="M134,30 C132,22 134,12 140,8 C145,4 150,8 152,15 C154,22 150,30 144,33 Z"/>
           {/* hocico */}
-          <ellipse cx="100" cy="99" rx="16" ry="11"/>
-          {/* nariz */}
-          <ellipse cx="100" cy="92" rx="7" ry="5" fill="#c0392b"/>
-          {/* marca facial clara */}
-          <ellipse cx="100" cy="102" rx="10" ry="7" fill="#ffe0b2" opacity="0.6"/>
-          {/* ojos */}
-          <circle cx="88" cy="80" r="4" fill="#5d4037"/>
-          <circle cx="112" cy="80" r="4" fill="#5d4037"/>
-          <circle cx="89" cy="79" r="1.5" fill="#fff"/>
-          <circle cx="113" cy="79" r="1.5" fill="#fff"/>
-          {/* cola enroscada */}
-          <path d="M158,140 Q195,110 185,78 Q180,62 166,78 Q172,98 155,120 Z"/>
-          {/* patas delanteras */}
-          <rect x="72" y="182" width="16" height="30" rx="8"/>
-          <rect x="112" y="182" width="16" height="30" rx="8"/>
-          {/* patas traseras */}
-          <rect x="58" y="175" width="14" height="26" rx="7" opacity="0.7"/>
-          <rect x="128" y="175" width="14" height="26" rx="7" opacity="0.7"/>
+          <path d="M105,72 C98,68 92,65 90,70 C88,75 92,82 100,84 C106,85 110,80 108,75 Z"/>
+          {/* cola enroscada hacia arriba */}
+          <path d="M170,145 C188,135 205,120 208,102 C211,85 200,72 188,74 C178,76 172,88 175,102 C177,112 182,122 178,133 C175,140 170,145 165,148 Z"/>
+          {/* pata delantera izq */}
+          <path d="M75,208 C72,210 68,220 70,230 C72,238 78,240 82,236 C86,232 86,222 84,212 Z"/>
+          {/* pata delantera der */}
+          <path d="M100,210 C97,212 93,222 95,232 C97,240 103,242 107,238 C111,234 111,224 109,214 Z"/>
+          {/* pata trasera izq */}
+          <path d="M130,208 C128,215 130,228 134,235 C138,240 144,238 146,230 C148,222 144,212 138,208 Z"/>
+          {/* pata trasera der */}
+          <path d="M152,205 C150,212 152,224 156,230 C160,236 166,234 168,226 C170,218 166,208 160,204 Z"/>
         </g>
       </svg>
 
-      <svg className="husky-deco husky-deco-right" viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <g fill="#ff6b35">
-          <ellipse cx="100" cy="155" rx="58" ry="42"/>
-          <circle cx="100" cy="85" r="34"/>
-          <polygon points="70,66 54,22 90,58"/>
-          <polygon points="130,66 146,22 110,58"/>
-          <polygon points="72,64 60,30 86,58" fill="#ffb347"/>
-          <polygon points="128,64 140,30 114,58" fill="#ffb347"/>
-          <ellipse cx="100" cy="99" rx="16" ry="11"/>
-          <ellipse cx="100" cy="92" rx="7" ry="5" fill="#c0392b"/>
-          <ellipse cx="100" cy="102" rx="10" ry="7" fill="#ffe0b2" opacity="0.6"/>
-          <circle cx="88" cy="80" r="4" fill="#5d4037"/>
-          <circle cx="112" cy="80" r="4" fill="#5d4037"/>
-          <circle cx="89" cy="79" r="1.5" fill="#fff"/>
-          <circle cx="113" cy="79" r="1.5" fill="#fff"/>
-          <path d="M158,140 Q195,110 185,78 Q180,62 166,78 Q172,98 155,120 Z"/>
-          <rect x="72" y="182" width="16" height="30" rx="8"/>
-          <rect x="112" y="182" width="16" height="30" rx="8"/>
-          <rect x="58" y="175" width="14" height="26" rx="7" opacity="0.7"/>
-          <rect x="128" y="175" width="14" height="26" rx="7" opacity="0.7"/>
+      <svg className="husky-deco husky-deco-right" viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <g fill="#e8622a">
+          <path d="M40,200 C30,195 20,180 22,160 C24,140 35,125 55,118 C70,113 90,112 110,115 C135,118 158,125 170,140 C182,155 180,175 170,188 C160,200 140,208 115,210 C90,212 55,208 40,200 Z"/>
+          <path d="M110,115 C105,100 100,85 105,72 C108,63 118,58 128,60 C138,62 142,70 140,82 C138,95 132,108 122,115 Z"/>
+          <path d="M105,72 C100,55 102,42 112,34 C120,27 134,26 144,32 C154,38 158,50 155,62 C152,74 143,82 132,84 C121,86 110,80 105,72 Z"/>
+          <path d="M112,34 C108,26 106,14 112,8 C116,4 122,6 126,12 C130,18 128,28 124,34 Z"/>
+          <path d="M134,30 C132,22 134,12 140,8 C145,4 150,8 152,15 C154,22 150,30 144,33 Z"/>
+          <path d="M105,72 C98,68 92,65 90,70 C88,75 92,82 100,84 C106,85 110,80 108,75 Z"/>
+          <path d="M170,145 C188,135 205,120 208,102 C211,85 200,72 188,74 C178,76 172,88 175,102 C177,112 182,122 178,133 C175,140 170,145 165,148 Z"/>
+          <path d="M75,208 C72,210 68,220 70,230 C72,238 78,240 82,236 C86,232 86,222 84,212 Z"/>
+          <path d="M100,210 C97,212 93,222 95,232 C97,240 103,242 107,238 C111,234 111,224 109,214 Z"/>
+          <path d="M130,208 C128,215 130,228 134,235 C138,240 144,238 146,230 C148,222 144,212 138,208 Z"/>
+          <path d="M152,205 C150,212 152,224 156,230 C160,236 166,234 168,226 C170,218 166,208 160,204 Z"/>
         </g>
       </svg>
       <header className="app-header">
